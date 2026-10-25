@@ -30,3 +30,21 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local environment
+.env
+.env.local
+.env.*.local
+
+# Firebase
+.firebase/
+
+# Supabase
+supabase/.temp/
+
+# Local tools
+.vscode/
+
+# Locally installed agent tooling (not application source)
+.agents/
+skills-lock.json

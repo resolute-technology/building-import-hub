@@ -5,13 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build",
-    "build:dev": "vite build --mode development",
+    "build": "node scripts/verify-env.mjs && vite build",
+    "build:dev": "node scripts/verify-env.mjs development && vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write .",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "check:static": "node scripts/verify-static.mjs"
   },
   "overrides": {
     "rolldown": "1.2.1"
@@ -69,8 +70,8 @@
     "tw-animate-css": "^1.3.4",
     "vaul": "^1.1.2",
     "vite-tsconfig-paths": "^6.0.2",
-    "xlsx": "^0.18.5",
-    "zod": "^3.25.76"
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz",
+    "zod": "4.6.7"
   },
   "devDependencies": {
     "@eslint/js": "^9.32.0",
@@ -88,14 +89,19 @@
     "eslint-plugin-prettier": "^5.2.6",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
+    "firebase-tools": "^15.34.1",
     "globals": "^15.15.0",
     "jsdom": "^20.0.3",
     "nitro": "3.0.260603-beta",
     "postgres": "^3.4.9",
     "prettier": "^3.7.3",
+    "supabase": "^2.122.0",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.56.1",
-    "vite": "8.1.5",
+    "vite": "8.3.5",
     "vitest": "^4.1.10"
+  },
+  "engines": {
+    "node": ">=22.12.0 <23 || >=24.0.0 <25"
   }
 }

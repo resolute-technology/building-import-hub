@@ -1,1 +1,9 @@
-project_id = "svfcfhhjvweaexspekwe"
+project_id = "etwvrqdhzocgtjrzqhxn"
+
+[functions.import-buildings]
+enabled = true
+# The handler verifies the user JWT with Auth getUser before parsing or inserting.
+# Keep this application-level verification when the gateway check is disabled.
+verify_jwt = false
+import_map = "./functions/import-buildings/deno.json"
+entrypoint = "./functions/import-buildings/index.ts"

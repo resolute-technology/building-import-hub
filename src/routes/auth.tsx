@@ -52,18 +52,36 @@ function AuthPage() {
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-muted px-4">
-      <form onSubmit={submit} className="w-full max-w-sm space-y-5 rounded-xl border bg-card p-8 shadow-sm">
+      <form
+        onSubmit={submit}
+        className="w-full max-w-sm space-y-5 rounded-xl border bg-card p-8 shadow-sm"
+      >
         <div>
-          <h1 className="text-2xl font-semibold">{mode === "signin" ? "Sign in" : "Create account"}</h1>
+          <h1 className="text-2xl font-semibold">
+            {mode === "signin" ? "Sign in" : "Create account"}
+          </h1>
           <p className="text-sm text-muted-foreground">Buildings Registry</p>
         </div>
         <div className="space-y-2">
           <Label htmlFor="email">Email</Label>
-          <Input id="email" type="email" required value={email} onChange={(e) => setEmail(e.target.value)} />
+          <Input
+            id="email"
+            type="email"
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
         </div>
         <div className="space-y-2">
           <Label htmlFor="password">Password</Label>
-          <Input id="password" type="password" required minLength={6} value={password} onChange={(e) => setPassword(e.target.value)} />
+          <Input
+            id="password"
+            type="password"
+            required
+            minLength={6}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
         </div>
         <Button type="submit" className="w-full" disabled={busy}>
           {busy ? "Please wait…" : mode === "signin" ? "Sign in" : "Sign up"}
